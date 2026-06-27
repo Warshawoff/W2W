@@ -20,20 +20,16 @@ function renderCard($item, $type = 'series') {
     <div class="media-card">
         <div class="media-poster" style="background-image: url('<?= $poster ?>');">
             <div class="hero-add-btn-holder">
-                <?php include '../components/add_btn.svg'; ?>
+                <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $radius = '0 15px 0 15px'; $borderWidth = '2px'; include '../components/add_btn.php'; ?>
             </div>
+            
         </div>
 
         <div class="media-info">
             <h3><?= $title ?></h3>
             
             <div class="ratings-container">
-                <div class="rating-badge-item-holder">
-                    <?php 
-                    $_GET['rating'] = $rating; 
-                    include '../components/badge_imdb.php'; 
-                    ?>
-                </div>
+                <?php $rating; $bgColor = 'rgba(20, 20, 20, 0.8)'; include '../components/badge_imdb.php'; ?>
 
                 <div class="rating-badge-item-holder">
                     <?php 

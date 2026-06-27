@@ -123,5 +123,4 @@
     width: 100%;
     height: 100%;
     display: block;
-    pointer-events: auto; /* Permet d'activer les interactions et hovers définis dans le fichier CSS du badge */
 }

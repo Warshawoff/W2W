@@ -36,5 +36,15 @@
       "fillCompleteColor": { "type": "color", "default": "#1d8f38" },
       "bgColor": { "type": "color", "default": "#676767" }
     }
+  },
+  "add_btn": {
+    "file": "../components/add_btn.php",
+    "params": {
+      "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
+      "iconColor": { "type": "color", "default": "#ffcc00" },
+      "size": { "type": "text", "default": "40px" },
+      "radius": { "type": "text", "default": "0 15px 0 15px" },
+      "borderWidth": { "type": "text", "default": "2px" }
+    }
   }
 }

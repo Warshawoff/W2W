@@ -10,7 +10,7 @@
                 <a href="javascript:history.back()" class="back-btn">
                     <?php include '../assets/back_arrow.svg'; ?>
                 </a>
-                <div class="add-btn"><?php include '../components/add_btn.svg'; ?></div>
+                <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $radius = '0 15px 0 15px'; $borderWidth = '2px'; include '../components/add_btn.php'; ?>
             </div>
 
             <div class="hero-content">
