@@ -26,5 +26,15 @@
       "rating": { "type": "text", "default": "0.0" },
       "scale": { "type": "range", "default": 1 }
     }
+  },
+  "progress_bar": {
+    "file": "../components/progress_bar.php",
+    "params": {
+      "percent": { "type": "text", "default": "0" },
+      "height": { "type": "text", "default": "20px" },
+      "fillColor": { "type": "color", "default": "#ffcc00" },
+      "fillCompleteColor": { "type": "color", "default": "#1d8f38" },
+      "bgColor": { "type": "color", "default": "#676767" }
+    }
   }
 }

@@ -26,7 +26,7 @@
 
             <div class="progress-container">
                 <div id="pb-container">
-                    <?php include '../assets/progress_bar.svg'; ?>
+                    <?php $percent = 78; $height = '10px'; $fillColor = '#ffcc00'; $fillCompleteColor = '#1d8f38'; $bgColor = '#676767'; include '../components/progress_bar.php'; ?>
                 </div>
             </div>
         </div>
@@ -59,7 +59,6 @@
                 <span class="tag">Fantastique</span>
             </div>
 
-            <?php include '../components/season_control.php'; ?>
         </div>
     </div>
 </div>
