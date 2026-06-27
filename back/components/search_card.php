@@ -46,7 +46,7 @@ function renderCard($item, $type = 'series') {
             <?= $extra_info ?>
         </div>
 
-        <a href="show_detail.php?id=<?= $id ?>&type=<?= $type ?>" class="main-card-link" aria-label="Voir les détails de <?= $title ?>"></a>
+        <a href="../pages/shows.php?id=<?= $id ?>&type=<?= $type ?>" class="main-card-link" aria-label="Voir les détails de <?= $title ?>"></a>
     </div>
     <?php
 }
