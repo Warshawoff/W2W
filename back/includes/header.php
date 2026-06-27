@@ -12,9 +12,7 @@
     <div class="header-container">
         <div class="header-left">
             <a class="logo" href="/index.php">
-                <span class="header-logo-wrapper">
-                    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/logo.svg'; ?>
-                </span>
+                <?php $scale = '1.4'; include $_SERVER['DOCUMENT_ROOT'] . '/assets/logo_icon.php'; ?>
             </a>
         </div>
         <div class="header-right">

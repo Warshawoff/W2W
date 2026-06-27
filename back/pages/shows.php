@@ -60,6 +60,7 @@
             </div>
 
             <?php include '../components/season_control.php'; ?>
+            <?php $rating = '8.8'; $scale = '1'; include '../components/w2w_badge.php'; ?>
         </div>
     </div>
 </div>
