@@ -11,9 +11,7 @@ function renderCard($item, $type = 'series') {
     $id = intval($item['id']);
     
     $extra_info = '';
-    if ($type === 'series' && isset($item['season_count'])) {
-        $extra_info = '<p class="card-meta">Saisons: ' . htmlspecialchars($item['season_count']) . '</p>';
-    } elseif ($type === 'movie' && isset($item['duration'])) {
+    if ($type === 'movie' && isset($item['duration'])) {
         $extra_info = '<p class="card-meta">⏱️ ' . htmlspecialchars($item['duration']) . ' min</p>';
     }
     ?>

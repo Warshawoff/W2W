@@ -29,15 +29,13 @@ try {
 include '../components/header.php'; 
 ?>
 
-<div class="main-container">
+<div class="main-container search-page-container">
     <main id="main-content">
         
-        <!-- Barre de recherche -->
         <?php renderSearchBar($search_query); ?>
 
         <div class="view-content-wrapper">
 
-            <!-- SECTION : RÉSULTATS DE RECHERCHE (Apparaît uniquement en cas de recherche) -->
             <?php if (!empty($search_query)): ?>
                 <section class="content-section search-results-section">
                     <h3 class="section-title">Résultats pour "<?= htmlspecialchars($search_query) ?>"</h3>
@@ -53,7 +51,6 @@ include '../components/header.php';
                 </section>
             <?php endif; ?>
 
-            <!-- SECTION : SÉRIES (Affiche toutes les séries existantes) -->
             <section class="content-section">
                 <h3 class="section-title">TV Séries</h3>
                 <div class="series-grid">
@@ -67,7 +64,6 @@ include '../components/header.php';
                 </div>
             </section>
 
-            <!-- SECTION : FILMS (Affichage forcé en vide pour l'instant) -->
             <section class="content-section">
                 <h3 class="section-title">Films</h3>
                 <div class="series-grid">

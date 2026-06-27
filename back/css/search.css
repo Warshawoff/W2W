@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+/* Conteneur principal de la vue de recherche */
+.view-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 60px; /* Espace généreux entre chaque grosse section */
+}
+
+/* Espacement interne de chaque section */
+.content-section {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+/* Ligne de séparation élégante sous les sections (sauf la dernière) */
+.content-section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; /* Place la ligne pile au milieu du gap de 60px */
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, rgba(142, 142, 147, 0.2) 0%, rgba(142, 142, 147, 0.05) 100%);
+}
+
+/* Style spécifique pour les titres de section dans la page recherche */
+.content-section .section-title {
+    font-size: 1.6rem;
+    margin-bottom: 10px;
+}
