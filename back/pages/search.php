@@ -1,9 +1,7 @@
 <?php 
-// 1. Connexion à la base de données
 require_once '../db.php'; 
-
-// Inclusion du composant de la carte
 require_once '../components/search_card.php';
+require_once '../components/search_bar.php';
 
 // 2. Récupération de la chaîne de recherche si elle existe
 $search_query = isset($_GET['q']) ? trim($_GET['q']) : '';
@@ -35,21 +33,14 @@ include '../components/header.php';
     <main id="main-content">
         
         <!-- Barre de recherche -->
-        <div class="search-header-zone">
-            <form action="search.php" method="GET" class="search-form">
-                <div class="search-input-wrapper">
-                    <input type="text" name="q" value="<?= htmlspecialchars($search_query) ?>" placeholder="Chercher une série..." autocomplete="off">
-                    <button type="submit" class="btn-search">🔍</button>
-                </div>
-            </form>
-        </div>
+        <?php renderSearchBar($search_query); ?>
 
         <div class="view-content-wrapper">
 
             <!-- SECTION : RÉSULTATS DE RECHERCHE (Apparaît uniquement en cas de recherche) -->
             <?php if (!empty($search_query)): ?>
                 <section class="content-section search-results-section">
-                    <h3 class="section-title">🔍 Résultats pour "<?= htmlspecialchars($search_query) ?>"</h3>
+                    <h3 class="section-title">Résultats pour "<?= htmlspecialchars($search_query) ?>"</h3>
                     <div class="series-grid">
                         <?php if (empty($search_results)): ?>
                             <p class="empty-message">Aucun résultat trouvé pour cette recherche.</p>
