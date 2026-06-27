@@ -45,3 +45,10 @@
     color: var(--text-main, #ffffff);
     background-color: rgba(255, 255, 255, 0.05);
 }
+
+/* Agrandissement du logo dans le header */
+.header-logo-wrapper {
+    display: inline-block; /* Nécessaire pour que transform fonctionne */
+    transform: scale(2); /* Ajuste ce chiffre selon la taille souhaitée */
+    transform-origin: left center; /* Garde le logo aligné à gauche */
+}

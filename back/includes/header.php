@@ -11,7 +11,11 @@
 <header id="header">
     <div class="header-container">
         <div class="header-left">
-            <a class="logo" href="/index.php"><div class="logo-html"><?php include $_SERVER['DOCUMENT_ROOT'] . '/logo.html'; ?></div></a>
+            <a class="logo" href="/index.php">
+                <span class="header-logo-wrapper">
+                    <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/logo.svg'; ?>
+                </span>
+            </a>
         </div>
         <div class="header-right">
             <nav class="nav-header">

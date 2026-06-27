@@ -26,7 +26,7 @@ try {
     die("Erreur lors de la récupération des données : " . $e->getMessage());
 }
 
-include '../components/header.php'; 
+include '../includes/header.php'; 
 ?>
 
 <div class="main-container search-page-container">
@@ -81,4 +81,4 @@ include '../components/header.php';
     </main>
 </div>
 
-<?php include '../components/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
