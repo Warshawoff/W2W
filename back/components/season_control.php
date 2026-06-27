@@ -24,7 +24,7 @@ $is_complete = ($vu == $total);
         <div class="episode-actions">
             <span class="episode-count" id="count-text"><?php echo $vu . '/' . $total; ?></span>
             <button class="check-btn" onclick="toggleSeason(this)">
-                <?php include '../components/check_icon.svg'; ?>
+                <?php include '../assets/check_icon.svg'; ?>
             </button>
         </div>
     </div>

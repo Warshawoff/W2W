@@ -1,59 +1,39 @@
-<?php
-$rating = isset($_GET['rating']) ? htmlspecialchars($_GET['rating']) : '0.0';
+<?php 
+$rating = isset($rating) ? $rating : '0.0'; 
+$scale = isset($scale) ? $scale : '1';
+$bgColor = isset($bgColor) ? $bgColor : 'rgba(20, 20, 20, 0.8)';
 ?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 105 32" width="100%" height="100%">
-    <defs>
-        <style>
-            .badge-clickable { cursor: pointer; }
-            .badge-bg {
-                fill: rgba(20, 20, 20, 0.8);
-                stroke: #ffcc00;
-                stroke-width: 1.5;
-                transition: fill 0.2s ease, stroke 0.2s ease;
-            }
-            .star-icon {
-                fill: #ffcc00;
-                transition: fill 0.2s ease;
-            }
-            .rating-text {
-                fill: #ffffff;
-                font-family: Arial, sans-serif;
-                font-size: 13px;
-                font-weight: bold;
-                transition: fill 0.2s ease;
-            }
 
-            /* Effet au survol (Hover) */
-            .badge-clickable:hover .badge-bg {
-                fill: #ffcc00;
-                stroke: #ffcc00;
-            }
-            .badge-clickable:hover .star-icon {
-                fill: #141414;
-            }
-            .badge-clickable:hover .rating-text {
-                fill: #141414;
-            }
-            /* Adaptation des couleurs du logo au survol */
-            .badge-clickable:hover rect {
-                fill: #141414;
-            }
-            .badge-clickable:hover text {
-                fill: #ffcc00;
-            }
-        </style>
-    </defs>
+<button class="custom-badge-container" style="transform: scale(<?php echo $scale; ?>); --bg-main: <?php echo $bgColor; ?>;">
+    <div class="badge-star-wrapper"><?php include '../assets/star_icon.svg'; ?></div>
+    <span class="badge-score"><?php echo $rating; ?></span>
+    <div class="badge-logo-wrapper"><?php include 'logo_w2w.php'; ?></div>
+</button>
 
-    <g class="badge-clickable">
-        <rect class="badge-bg" x="1" y="1" width="103" height="30" rx="8" />
-        
-        <path class="star-icon" d="M16 7.5 l1.96 4.02 4.43.64-3.21 3.14.76 4.41-3.94-2.07-3.94 2.07.76-4.41-3.21-3.14 4.43-.64z" />
-        
-        <text class="rating-text" x="28" y="20"><?= $rating ?></text>
-        
-        <!-- Inclusion du logo centralisé -->
-        <g transform="translate(58, 7)">
-            <?php include '../assets/logo.svg'; ?>
-        </g>
-    </g>
-</svg>
+<style>
+    .custom-badge-container {
+        --border-main: #ffcc00; 
+        --text-main: #ffffff; 
+        --star-color: #ffcc00;
+        display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; padding: 0.25em 0.6em;
+        border: 0.10em solid var(--border-main); 
+        border-radius: 0.5em; 
+        /* Utilisation directe de la variable qui sera mise à jour au survol */
+        background-color: var(--bg-main);
+        cursor: pointer; height: 1.8em; transition: all 0.3s ease; transform-origin: left center;
+    }
+
+    /* Ici on force la variable --bg-main à passer en jaune au survol */
+    .custom-badge-container:hover { 
+        --bg-main: #ffcc00 !important; 
+        --border-main: #ffcc00; 
+        --text-main: #000000; 
+        --star-color: #000000; 
+    }
+
+    .custom-badge-container .badge-score { color: var(--text-main); font-family: sans-serif; font-size: 0.8em; font-weight: bold; margin-top: 0.7px; }
+    .custom-badge-container .badge-star-wrapper { display: flex; align-items: center; }
+    .custom-badge-container .badge-star-wrapper svg { width: 0.85em; height: 0.85em; fill: var(--star-color); transition: fill 0.3s; }
+    .custom-badge-container:hover .logo-w2w { background-color: #000000 !important; color: #ffcc00 !important; }
+    .custom-badge-container .badge-logo-wrapper { display: flex; align-items: center; height: 100%; }
+</style>

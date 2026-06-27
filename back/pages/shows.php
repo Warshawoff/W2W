@@ -8,7 +8,7 @@
 
             <div class="hero-top-actions">
                 <a href="javascript:history.back()" class="back-btn">
-                    <?php include '../components/back_arrow.svg'; ?>
+                    <?php include '../assets/back_arrow.svg'; ?>
                 </a>
                 <div class="add-btn"><?php include '../components/add_btn.svg'; ?></div>
             </div>
@@ -19,14 +19,14 @@
                     <p class="show-meta">1 saison - Terminée</p>
                 </div>
                 <div class="badges-row">
-                    <div class="badge-item"><?php $rating = 8.8; include '../components/badge_imdb.php'; ?></div>
-                    <div class="badge-item"><?php include '../components/badge_w2w.php'; ?></div>
+                    <div class="badge-item"><?php $bgColor = 'rgba(20, 20, 20, 0.8)'; include '../components/badge_imdb.php'; ?></div>
+                    <div class="badge-item"><?php $bgColor = 'rgba(20, 20, 20, 0.8)'; include '../components/badge_w2w.php'; ?></div>
                 </div>
             </div>
 
             <div class="progress-container">
                 <div id="pb-container">
-                    <?php include '../components/progress_bar.svg'; ?>
+                    <?php include '../assets/progress_bar.svg'; ?>
                 </div>
             </div>
         </div>
@@ -34,11 +34,11 @@
         <div class="info-section">
             <div class="top-badges">
                 <div class="badge-box">
-                    <?php include '../components/calendar_icon.svg'; ?>
+                    <?php include '../assets/calendar_icon.svg'; ?>
                     <span>5 janv. 2024 - 25 janv. 2024</span>
                 </div>
                 <div class="badge-box">
-                    <?php include '../components/clock_icon.svg'; ?>
+                    <?php include '../assets/clock_icon.svg'; ?>
                     <span>52 min</span>
                 </div>
             </div>
@@ -60,7 +60,6 @@
             </div>
 
             <?php include '../components/season_control.php'; ?>
-            <?php $rating = '8.8'; $scale = '1'; include '../components/w2w_badge.php'; ?>
         </div>
     </div>
 </div>

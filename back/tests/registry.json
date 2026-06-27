@@ -1,0 +1,30 @@
+{
+  "logo_w2w": {
+    "file": "../components/logo_w2w.php",
+    "params": {
+      "bg_color": { "type": "color", "default": "#ffcc00" },
+      "text_color": { "type": "color", "default": "#000000" }
+    }
+  },
+  "logo_imdb": {
+    "file": "../components/logo_imdb.php",
+    "params": {
+      "bg_color": { "type": "color", "default": "#ffcc00" },
+      "text_color": { "type": "color", "default": "#000000" }
+    }
+  },
+  "badge": {
+    "file": "../components/badge_w2w.php",
+    "params": {
+      "rating": { "type": "text", "default": "0.0" },
+      "scale": { "type": "range", "default": 1 }
+    }
+  },
+  "badge_imdb": {
+    "file": "../components/badge_imdb.php",
+    "params": {
+      "rating": { "type": "text", "default": "0.0" },
+      "scale": { "type": "range", "default": 1 }
+    }
+  }
+}

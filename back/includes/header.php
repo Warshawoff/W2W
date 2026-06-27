@@ -12,7 +12,7 @@
     <div class="header-container">
         <div class="header-left">
             <a class="logo" href="/index.php">
-                <?php $scale = '1.4'; include $_SERVER['DOCUMENT_ROOT'] . '/assets/logo_icon.php'; ?>
+                <?php $scale = '1.4'; include $_SERVER['DOCUMENT_ROOT'] . '/components/logo_w2w.php'; ?>
             </a>
         </div>
         <div class="header-right">
