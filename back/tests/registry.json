@@ -74,5 +74,14 @@
         "color": { "type": "color", "default": "#ffffff" },
         "borderWidth": { "type": "text", "default": "1px" }
     }
+  },
+  "btn_genre": {
+      "file": "../components/btn_genre.php",
+      "params": {
+        "text": { "type": "text", "default": "N/A" },
+        "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
+        "color": { "type": "color", "default": "#ffffff" },
+        "borderWidth": { "type": "text", "default": "1px" }
+    }
   }
 }

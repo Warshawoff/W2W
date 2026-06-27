@@ -47,10 +47,10 @@
             </div>
 
             <div class="tags-row">
-                <span class="tag">Coréen</span>
-                <span class="tag">Drame Coréen</span>
-                <span class="tag">Drame</span>
-                <span class="tag">Fantastique</span>
+                <?php $text = 'Coréen'; $bgColor = 'rgba(20, 20, 20, 0.8)'; $color = '#ffffff'; $borderWidth = '1px'; include '../components/btn_genre.php'; ?>
+                <?php $text = 'Drame Coréen'; $bgColor = 'rgba(20, 20, 20, 0.8)'; $color = '#ffffff'; $borderWidth = '1px'; include '../components/btn_genre.php'; ?>
+                <?php $text = 'Drame'; $bgColor = 'rgba(20, 20, 20, 0.8)'; $color = '#ffffff'; $borderWidth = '1px'; include '../components/btn_genre.php'; ?>
+                <?php $text = 'Fantastique'; $bgColor = 'rgba(20, 20, 20, 0.8)'; $color = '#ffffff'; $borderWidth = '1px'; include '../components/btn_genre.php'; ?>
             </div>
 
         </div>
