@@ -1,47 +1,44 @@
 <?php 
 // 1. Connexion à la base de données
-require_once 'db.php'; 
+require_once '../db.php'; 
 
-// Inclusion du composant de la carte (assure-toi que le chemin est correct)
-require_once 'components/search_card.php';
+// Inclusion du composant de la carte
+require_once '../components/search_card.php';
 
-// 2. On récupère la recherche si l'utilisateur a tapé quelque chose
+// 2. Récupération de la chaîne de recherche si elle existe
 $search_query = isset($_GET['q']) ? trim($_GET['q']) : '';
+$search_results = [];
 
 try {
+    // Si l'utilisateur fait une recherche, on filtre la table 'series'
     if (!empty($search_query)) {
-        // RECHERCHE : on cherche dans les séries
-        $stmt_search = $pdo->prepare("SELECT * FROM series WHERE title ILIKE :q ORDER BY total_views DESC");
+        $stmt_search = $pdo->prepare("SELECT * FROM series WHERE title ILIKE :q ORDER BY title ASC");
         $stmt_search->execute(['q' => "%$search_query%"]);
         $search_results = $stmt_search->fetchAll();
     }
 
-    // SÉRIES : les 6 dernières ajoutées
-    $stmt_series = $pdo->query("SELECT * FROM series ORDER BY id DESC LIMIT 6");
+    // Requête principale : On récupère TOUTES les séries de la table
+    $stmt_series = $pdo->query("SELECT * FROM series ORDER BY title ASC");
     $all_series = $stmt_series->fetchAll();
 
-    // FILMS : simulation avec les séries (à remplacer par ta table 'movies' plus tard)
-    $stmt_movies = $pdo->query("SELECT * FROM series ORDER BY id DESC LIMIT 6");
-    $all_movies = $stmt_movies->fetchAll();
-
-    // POPULAIRES : top 6 séries les plus vues
-    $stmt_popular = $pdo->query("SELECT * FROM series ORDER BY total_views DESC LIMIT 6");
-    $popular_series = $stmt_popular->fetchAll();
+    // Pour l'instant, pas de table ou de données de films
+    $all_movies = [];
 
 } catch (PDOException $e) {
     die("Erreur lors de la récupération des données : " . $e->getMessage());
 }
 
-include 'includes/header.php'; 
+include '../components/header.php'; 
 ?>
 
 <div class="main-container">
     <main id="main-content">
         
+        <!-- Barre de recherche -->
         <div class="search-header-zone">
             <form action="search.php" method="GET" class="search-form">
                 <div class="search-input-wrapper">
-                    <input type="text" name="q" value="<?= htmlspecialchars($search_query) ?>" placeholder="Chercher un film, une série..." autocomplete="off">
+                    <input type="text" name="q" value="<?= htmlspecialchars($search_query) ?>" placeholder="Chercher une série..." autocomplete="off">
                     <button type="submit" class="btn-search">🔍</button>
                 </div>
             </form>
@@ -49,12 +46,13 @@ include 'includes/header.php';
 
         <div class="view-content-wrapper">
 
+            <!-- SECTION : RÉSULTATS DE RECHERCHE (Apparaît uniquement en cas de recherche) -->
             <?php if (!empty($search_query)): ?>
                 <section class="content-section search-results-section">
-                    <h3 class="section-title">Résultats pour "<?= htmlspecialchars($search_query) ?>"</h3>
+                    <h3 class="section-title">🔍 Résultats pour "<?= htmlspecialchars($search_query) ?>"</h3>
                     <div class="series-grid">
                         <?php if (empty($search_results)): ?>
-                            <p class="empty-message">Aucun résultat trouvé.</p>
+                            <p class="empty-message">Aucun résultat trouvé pour cette recherche.</p>
                         <?php else: ?>
                             <?php foreach ($search_results as $show): ?>
                                 <?php renderCard($show, 'series'); ?>
@@ -64,30 +62,9 @@ include 'includes/header.php';
                 </section>
             <?php endif; ?>
 
+            <!-- SECTION : SÉRIES (Affiche toutes les séries existantes) -->
             <section class="content-section">
-                <h3 class="section-title">🔥 Les plus populaires</h3>
-                <div class="series-grid">
-                    <?php if (empty($popular_series)): ?>
-                        <p class="empty-message">Aucun contenu populaire.</p>
-                    <?php else: ?>
-                        <?php foreach ($popular_series as $show): ?>
-                            <?php renderCard($show, 'series'); ?>
-                        <?php endforeach; ?>
-                    <?php endif; ?>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h3 class="section-title">🎯 Recommandations pour vous</h3>
-                <div class="series-grid">
-                    <?php foreach ($popular_series as $show): ?>
-                        <?php renderCard($show, 'series'); ?>
-                    <?php endforeach; ?>
-                </div>
-            </section>
-
-            <section class="content-section">
-                <h3 class="section-title">📺 Séries</h3>
+                <h3 class="section-title">TV Séries</h3>
                 <div class="series-grid">
                     <?php if (empty($all_series)): ?>
                         <p class="empty-message">Aucune série disponible.</p>
@@ -99,8 +76,9 @@ include 'includes/header.php';
                 </div>
             </section>
 
+            <!-- SECTION : FILMS (Affichage forcé en vide pour l'instant) -->
             <section class="content-section">
-                <h3 class="section-title">🎬 Films</h3>
+                <h3 class="section-title">Films</h3>
                 <div class="series-grid">
                     <?php if (empty($all_movies)): ?>
                         <p class="empty-message">Aucun film disponible.</p>
@@ -116,4 +94,4 @@ include 'includes/header.php';
     </main>
 </div>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../components/footer.php'; ?>

@@ -39,7 +39,7 @@ function renderCard($item, $type = 'series') {
                     <span class="star-icon">★</span>
                     <span class="rating-value"><?= $rating ?></span>
                     <div class="badge-logo-html">
-                        <?php include 'logo.html'; ?>
+                        <?php include '../logo.html'; ?>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,17 @@
+#footer {
+    width: 100%;
+    text-align: center;
+    padding: 40px 0;
+    border-top: 1px solid #2a2a30;
+    margin-top: auto; /* Pousse le footer vers le bas si la page est vide */
+    box-sizing: border-box;
+}
+
+#footer p {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-muted, #666673);
+    font-size: 13px;
+    margin: 0;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+}

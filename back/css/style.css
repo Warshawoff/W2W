@@ -1,9 +1,5 @@
 @charset "UTF-8";
 @import url('global.css');
 @import url('header.css');
-@import url('index.css');
 @import url('footer.css');
-@import url('films.css');
-@import url('films_watchlist.css');
-@import url('films_tofollow.css');
 @import url('search_card.css');
