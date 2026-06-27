@@ -37,8 +37,8 @@
       "bgColor": { "type": "color", "default": "#676767" }
     }
   },
-  "add_btn": {
-    "file": "../components/add_btn.php",
+  "btn_add": {
+    "file": "../components/btn_add.php",
     "params": {
       "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
       "iconColor": { "type": "color", "default": "#ffcc00" },
@@ -47,13 +47,22 @@
       "borderWidth": { "type": "text", "default": "2px" }
     }
   },
-  "check_btn": {
-      "file": "../components/check_btn.php",
+  "btn_check": {
+      "file": "../components/btn_check.php",
       "params": {
         "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
         "checkBgColor": { "type": "color", "default": "#1d8f38" },
         "iconColor": { "type": "color", "default": "#ffffff" },
         "size": { "type": "text", "default": "40px" }
+    }
+  },
+  "btn_backarrow": {
+      "file": "../components/btn_backarrow.php",
+      "params": {
+        "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
+        "iconColor": { "type": "color", "default": "#ffcc00" },
+        "size": { "type": "text", "default": "40px" },
+        "borderWidth": { "type": "text", "default": "2px" }
     }
   }
 }

@@ -20,7 +20,7 @@ function renderCard($item, $type = 'series') {
     <div class="media-card">
         <div class="media-poster" style="background-image: url('<?= $poster ?>');">
             <div class="hero-add-btn-holder">
-                <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $radius = '0 15px 0 15px'; $borderWidth = '2px'; include '../components/add_btn.php'; ?>
+                <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $radius = '0 15px 0 15px'; $borderWidth = '2px'; include '../components/btn_add.php'; ?>
             </div>
             
         </div>

@@ -8,9 +8,9 @@
 
             <div class="hero-top-actions">
                 <a href="javascript:history.back()" class="back-btn">
-                    <?php include '../assets/back_arrow.svg'; ?>
+                    <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $borderWidth = '2px'; include '../components/btn_backarrow.php'; ?>
                 </a>
-                <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $radius = '0 15px 0 15px'; $borderWidth = '2px'; include '../components/add_btn.php'; ?>
+                <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $radius = '0 15px 0 15px'; $borderWidth = '2px'; include '../components/btn_add.php'; ?>
             </div>
 
             <div class="hero-content">
