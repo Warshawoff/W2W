@@ -30,6 +30,37 @@
                 </div>
             </div>
         </div>
+
+        <div class="info-section">
+            <div class="top-badges">
+                <div class="badge-box">
+                    <?php include '../components/calendar_icon.svg'; ?>
+                    <span>5 janv. 2024 - 25 janv. 2024</span>
+                </div>
+                <div class="badge-box">
+                    <?php include '../components/clock_icon.svg'; ?>
+                    <span>52 min</span>
+                </div>
+            </div>
+
+            <p class="description">
+                Dans ce drama tournant autour de la réincarnation, Yee-jae doit vivre douze vies et douze morts supplémentaires pour éviter l'enfer.
+            </p>
+
+            <div class="director-row">
+                <span class="label">Réalisation</span>
+                <span class="name">Lee Wonsik</span>
+            </div>
+
+            <div class="tags-row">
+                <span class="tag">Coréen</span>
+                <span class="tag">Drame Coréen</span>
+                <span class="tag">Drame</span>
+                <span class="tag">Fantastique</span>
+            </div>
+
+            <?php include '../components/season_control.php'; ?>
+        </div>
     </div>
 </div>
 <?php include '../includes/footer.php'; ?>

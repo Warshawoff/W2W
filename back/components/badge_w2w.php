@@ -53,7 +53,7 @@ $rating = isset($_GET['rating']) ? htmlspecialchars($_GET['rating']) : '0.0';
         
         <!-- Inclusion du logo centralisé -->
         <g transform="translate(58, 7)">
-            <?php include $_SERVER['DOCUMENT_ROOT'] . '/components/logo.svg'; ?>
+            <?php include '../components/logo.svg'; ?>
         </g>
     </g>
 </svg>

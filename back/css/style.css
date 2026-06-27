@@ -4,5 +4,6 @@
 @import url('includes/footer.css');
 @import url('components/search_card.css');
 @import url('components/search_bar.css');
+@import url('components/season_control.css');
 @import url('pages/search.css');
 @import url('pages/shows.css');

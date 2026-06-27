@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 /* --- Mise en page globale --- */
 .details-container { width: 100%; display: flex; justify-content: center; margin-top: 30px; }
 .content-wrapper { width: 50%; position: relative; }
@@ -5,7 +7,7 @@
 .hero-section {
     position: relative;
     width: 100%;
-    height: 450px;
+    height: 475px;
     border-radius: 12px 12px 0 0;
     overflow: hidden;
 }
@@ -44,8 +46,45 @@
 #pb-container svg { width: 100%; height: 100%; display: block; }
 
 .progress-fill {
-    /* Ajout de la transition sur le remplissage (fill) */
     transition: width 0.3s ease, fill 0.3s ease;
-    fill: #ffcc00; /* Couleur par défaut */
+    fill: #ffcc00;
     width: 50%; 
+}
+
+
+.info-section { 
+    padding: 25px; 
+    color: #fff; 
+    background-color: #121212; /* Fond plus sombre */
+    border-radius: 0 0 12px 12px; 
+}
+
+.top-badges { display: flex; gap: 15px; margin-bottom: 20px; }
+.badge-box { 
+    display: flex; align-items: center; gap: 8px;
+    background: #1e1e1e; padding: 10px 15px; border-radius: 8px; font-size: 1.1rem; 
+}
+
+/* On stylise directement le SVG inséré */
+.badge-box svg { 
+    width: 20px; 
+    height: 20px; 
+    stroke: #ffffff; /* Couleur de l'icône */
+}
+
+.description { 
+    line-height: 1.6; 
+    margin-bottom: 25px; 
+    font-size: 1.1rem;
+    word-wrap: break-word; /* Gère le retour à la ligne */
+    max-width: 100%;
+}
+
+.director-row { display: flex; gap: 15px; margin-bottom: 25px; align-items: center; font-size: 1.1rem; }
+.director-row .label { font-weight: bold; }
+.director-row .name { color: #3498db; }
+
+.tags-row { display: flex; gap: 10px; flex-wrap: wrap; }
+.tag { 
+    background: #1e1e1e; padding: 8px 18px; border-radius: 20px; font-size: 1rem; 
 }
