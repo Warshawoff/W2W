@@ -33,14 +33,8 @@
 
         <div class="info-section">
             <div class="top-badges">
-                <div class="badge-box">
-                    <?php include '../assets/calendar_icon.svg'; ?>
-                    <span>5 janv. 2024 - 25 janv. 2024</span>
-                </div>
-                <div class="badge-box">
-                    <?php include '../assets/clock_icon.svg'; ?>
-                    <span>52 min</span>
-                </div>
+                <?php $type = 'date'; $text = '5 janv. 2024 - 25 janv. 2024'; $bgColor = 'rgba(20, 20, 20, 0.8)'; $color = '#ffffff'; $borderWidth = '1px'; include '../components/badge_icon.php'; ?>
+                <?php $type = 'time'; $text = '52 min'; $bgColor = 'rgba(20, 20, 20, 0.8)'; $color = '#ffffff'; $borderWidth = '1px'; include '../components/badge_icon.php'; ?>
             </div>
 
             <p class="description">

@@ -64,5 +64,15 @@
         "size": { "type": "text", "default": "40px" },
         "borderWidth": { "type": "text", "default": "2px" }
     }
+  },
+  "badge_icon": {
+      "file": "../components/badge_icon.php",
+      "params": {
+        "type": { "type": "text", "default": "date" },
+        "text": { "type": "text", "default": "N/A" },
+        "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
+        "color": { "type": "color", "default": "#ffffff" },
+        "borderWidth": { "type": "text", "default": "1px" }
+    }
   }
 }
