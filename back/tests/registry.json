@@ -1,87 +1,50 @@
 {
-  "logo_w2w": {
-    "file": "../components/logo_w2w.php",
-    "params": {
-      "bg_color": { "type": "color", "default": "#ffcc00" },
-      "text_color": { "type": "color", "default": "#000000" }
+    "btn_genre": {
+        "file": "../components/btn_genre.php",
+        "function": "renderButtonGenre"
+    },
+    "badge_icon": {
+        "file": "../components/badge_icon.php",
+        "function": "renderBadgeIcon"
+    },
+    "logo_imdb": {
+        "file": "../components/logo_imdb.php",
+        "function": "renderLogoImdb"
+    },
+    "logo_w2w": {
+        "file": "../components/logo_w2w.php",
+        "function": "renderLogoW2W"
+    },
+    "badge_imdb": {
+        "file": "../components/badge_imdb.php",
+        "function": "renderBadgeImdb"
+    },
+    "badge_w2w": {
+        "file": "../components/badge_w2w.php",
+        "function": "renderBadgeW2W"
+    },
+    "btn_add": {
+        "file": "../components/btn_add.php",
+        "function": "renderBtnAdd"
+    },
+    "btn_backarrow": {
+        "file": "../components/btn_backarrow.php",
+        "function": "renderBtnBackArrow"
+    },
+    "btn_check": {
+        "file": "../components/btn_check.php",
+        "function": "renderBtnCheck"
+    },
+    "bar_progress": {
+        "file": "../components/bar_progress.php",
+        "function": "renderBarProgress"
+    },
+    "card_episode": {
+        "file": "../components/card_episode.php",
+        "function": "renderCardEpisode"
+    },
+    "card_season": {
+        "file": "../components/card_season.php",
+        "function": "renderCardSeason"
     }
-  },
-  "logo_imdb": {
-    "file": "../components/logo_imdb.php",
-    "params": {
-      "bg_color": { "type": "color", "default": "#ffcc00" },
-      "text_color": { "type": "color", "default": "#000000" }
-    }
-  },
-  "badge": {
-    "file": "../components/badge_w2w.php",
-    "params": {
-      "rating": { "type": "text", "default": "0.0" },
-      "scale": { "type": "range", "default": 1 }
-    }
-  },
-  "badge_imdb": {
-    "file": "../components/badge_imdb.php",
-    "params": {
-      "rating": { "type": "text", "default": "0.0" },
-      "scale": { "type": "range", "default": 1 }
-    }
-  },
-  "progress_bar": {
-    "file": "../components/progress_bar.php",
-    "params": {
-      "percent": { "type": "text", "default": "0" },
-      "height": { "type": "text", "default": "20px" },
-      "fillColor": { "type": "color", "default": "#ffcc00" },
-      "fillCompleteColor": { "type": "color", "default": "#1d8f38" },
-      "bgColor": { "type": "color", "default": "#676767" }
-    }
-  },
-  "btn_add": {
-    "file": "../components/btn_add.php",
-    "params": {
-      "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
-      "iconColor": { "type": "color", "default": "#ffcc00" },
-      "size": { "type": "text", "default": "40px" },
-      "radius": { "type": "text", "default": "0 15px 0 15px" },
-      "borderWidth": { "type": "text", "default": "2px" }
-    }
-  },
-  "btn_check": {
-      "file": "../components/btn_check.php",
-      "params": {
-        "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
-        "checkBgColor": { "type": "color", "default": "#1d8f38" },
-        "iconColor": { "type": "color", "default": "#ffffff" },
-        "size": { "type": "text", "default": "40px" }
-    }
-  },
-  "btn_backarrow": {
-      "file": "../components/btn_backarrow.php",
-      "params": {
-        "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
-        "iconColor": { "type": "color", "default": "#ffcc00" },
-        "size": { "type": "text", "default": "40px" },
-        "borderWidth": { "type": "text", "default": "2px" }
-    }
-  },
-  "badge_icon": {
-      "file": "../components/badge_icon.php",
-      "params": {
-        "type": { "type": "text", "default": "date" },
-        "text": { "type": "text", "default": "N/A" },
-        "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
-        "color": { "type": "color", "default": "#ffffff" },
-        "borderWidth": { "type": "text", "default": "1px" }
-    }
-  },
-  "btn_genre": {
-      "file": "../components/btn_genre.php",
-      "params": {
-        "text": { "type": "text", "default": "N/A" },
-        "bgColor": { "type": "color", "default": "rgba(20, 20, 20, 0.8)" },
-        "color": { "type": "color", "default": "#ffffff" },
-        "borderWidth": { "type": "text", "default": "1px" }
-    }
-  }
 }

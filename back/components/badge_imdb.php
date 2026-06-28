@@ -1,51 +1,83 @@
-<?php 
-$rating = isset($rating) ? $rating : '0.0'; 
-$scale = isset($scale) ? $scale : '1';
-$bgColor = isset($bgColor) ? $bgColor : 'rgba(20, 20, 20, 0.8)';
+<?php
+/**
+ * Fonction pour afficher le badge IMDb avec contraintes de sécurité.
+ */
+if (!function_exists('renderBadgeImdb')) {
+    function renderBadgeImdb(
+        $text = '0.0', 
+        $scale = 1.0, 
+        $bgColor = 'rgba(20, 20, 20, 0.8)', 
+        $fillColor = '#ffcc00',
+        $borderWidth = '1px'
+    ) {
+        // --- SÉCURITÉS ---
+        $numericScore = (float)str_replace(',', '.', $text);
+        $numericScore = round($numericScore, 1);
+        $safeScore = max(0.0, min(10.0, $numericScore));
+        
+        // --- AFFICHAGE ---
+        ?>
+        <div class="custom-badge-imdb" style="
+            --bg-main: <?php echo htmlspecialchars($bgColor); ?>;
+            --fill-main: <?php echo htmlspecialchars($fillColor); ?>;
+            --border-w: <?php echo htmlspecialchars($borderWidth); ?>;
+            transform: scale(<?php echo (float)$scale; ?>);">
+
+            <div class="badge-star-wrapper">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
+            <span class="badge-score"><?php echo number_format($safeScore, 1, '.', ''); ?></span>
+            <div class="badge-logo-wrapper">
+                <?php include_once '../components/logo_imdb.php'; renderLogoImdb(bgColor: $fillColor, textColor: $bgColor, scale: 1.0); ?>
+            </div>
+        </div>
+
+        <style>
+            .custom-badge-imdb {
+                display: inline-flex; 
+                align-items: center; 
+                justify-content: center; 
+                gap: 0.5em; 
+                padding: 0.3em 0.5em;
+                border: var(--border-w) solid var(--fill-main); 
+                border-radius: 0.5em; 
+                background: var(--bg-main);
+                cursor: pointer; 
+                transition: all 0.3s ease; 
+                transform-origin: center center;
+                box-sizing: border-box;
+                line-height: 1;
+            }
+
+            .custom-badge-imdb:hover { 
+                background: var(--fill-main); 
+                border-color: var(--fill-main);
+            }
+
+            .custom-badge-imdb .badge-score { 
+                color: #ffffff; 
+                font-family: sans-serif; 
+                font-weight: bold; 
+                margin-top: 2px;
+                transition: color 0.3s;
+            }
+
+            .custom-badge-imdb .badge-star-wrapper { display: flex; align-items: center; }
+            .custom-badge-imdb .badge-star-wrapper svg { 
+                width: 1em; height: 1em; 
+                fill: var(--fill-main); 
+                transition: fill 0.3s; 
+            }
+
+            .custom-badge-imdb:hover .badge-score { color: var(--bg-main); }
+            .custom-badge-imdb:hover .badge-star-wrapper svg { fill: var(--bg-main); }
+            
+            .custom-badge-imdb:hover .logo-imdb-custom {
+                background-color: var(--bg-main) !important;
+                color: var(--fill-main) !important;
+            }
+        </style>
+        <?php
+    }
+}
 ?>
-
-<button class="custom-badge-container imdb" style="transform: scale(<?php echo $scale; ?>); --bg-main: <?php echo $bgColor; ?>;">
-    <div class="badge-star-wrapper"><?php include '../assets/star_icon.svg'; ?></div>
-    <span class="badge-score"><?php echo $rating; ?></span>
-    <div class="badge-logo-wrapper">
-        <span class="logo-imdb-text">IMDb</span>
-    </div>
-</button>
-
-<style>
-    .custom-badge-container {
-        --border-main: #ffcc00; --text-main: #ffffff; --star-color: #ffcc00;
-        display: inline-flex; align-items: center; justify-content: center; gap: 0.5em; padding: 0.25em 0.6em;
-        border: 0.10em solid var(--border-main); border-radius: 0.5em; 
-        background-color: var(--bg-main);
-        cursor: pointer; height: 1.8em; transition: all 0.3s ease; transform-origin: left center;
-    }
-
-    .custom-badge-container:hover { 
-        --bg-main: #ffcc00 !important; 
-        --border-main: #ffcc00; 
-        --text-main: #000000; 
-        --star-color: #000000; 
-    }
-
-    .custom-badge-container .badge-score { color: var(--text-main); font-family: sans-serif; font-size: 0.8em; font-weight: bold; margin-top: 0.7px; }
-    .custom-badge-container .badge-star-wrapper { display: flex; align-items: center; }
-    .custom-badge-container .badge-star-wrapper svg { width: 0.85em; height: 0.85em; fill: var(--star-color); transition: fill 0.3s; }
-    
-    /* Spécifique IMDb */
-    .logo-imdb-text {
-        background-color: #ffcc00;
-        color: #000000;
-        font-family: Arial, sans-serif;
-        font-weight: 900;
-        font-size: 0.7em;
-        padding: 0.1em 0.3em;
-        border-radius: 0.2em;
-        transition: all 0.3s ease;
-    }
-    .custom-badge-container:hover .logo-imdb-text {
-        background-color: #000000 !important;
-        color: #ffcc00 !important;
-    }
-    .custom-badge-container .badge-logo-wrapper { display: flex; align-items: center; height: 100%; }
-</style>

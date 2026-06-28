@@ -20,7 +20,7 @@ function renderCard($item, $type = 'series') {
     <div class="media-card">
         <div class="media-poster" style="background-image: url('<?= $poster ?>');">
             <div class="hero-add-btn-holder">
-                <?php $bgColor = 'rgba(20, 20, 20, 0.8)'; $iconColor = '#ffcc00'; $radius = '0 15px 0 15px'; $borderWidth = '2px'; include '../components/btn_add.php'; ?>
+                <?php include '../components/btn_add.php'; renderBtnAdd(); ?>
             </div>
             
         </div>
@@ -29,14 +29,8 @@ function renderCard($item, $type = 'series') {
             <h3><?= $title ?></h3>
             
             <div class="ratings-container">
-                <?php $rating; $bgColor = 'rgba(20, 20, 20, 0.8)'; include '../components/badge_imdb.php'; ?>
-
-                <div class="rating-badge-item-holder">
-                    <?php 
-                    $_GET['rating'] = $rating; 
-                    include '../components/badge_w2w.php'; 
-                    ?>
-                </div>
+                <?php include_once '../components/badge_imdb.php'; renderBadgeImdb(text: '0.0'); ?>
+                <?php include_once '../components/badge_w2w.php'; renderBadgeW2W(text: '0.0'); ?>
             </div>
             
             <?= $extra_info ?>
